@@ -30,6 +30,20 @@
       for (let i = 1; i <= qtd_postos; i++) {
         let valor = parseFloat(prompt(`Digite o valor no posto ${i}`));
 
+        // A solução foi verificar se o valor informado pelo usuario é NaN com o isNaN(valor), ou seja, ele verifica se o valor não é um número (Not A Number). Se o valor não for um número essa condição é verdadeira (isNaN(valor) == 1), e é emitdo um alerta informando que o valor é inválido. Além disso o sistema solicita um novo valor para aquele determinado posto. Isso foi feito em um loop para que o usuario só saia quando for inserido um valor válido.
+
+        // Comentários sobre os links
+        // w3schools: ele deu exemplos com diferentes valores usando o parseFloat() e explicou que ele é um método que analisa o valor como uma string e retorna o primeiro número. 
+        
+        // Resaltou que se o primeiro caracter não poder ser convertido, NaN é retornado. Ex: parseFloat("A22"); 
+
+        // Se tiver espaçoes em branco eles são ignorados. Ex: parseFloat(" 11 ");
+
+        // Apenas o primeiro número encontrado é retornado. Ex: parseFloat("2003 nascimento");
+
+        // stack overflow: nesse site, tem uma dúvida sobre como usar o NaN de forma correta, porque nas tentativas feitas na pergunta não estava sendo feitas de forma correta. O correto seria usar o isNaN(parseFloat("geoff"))
+        
+
         while (isNaN(valor) == 1) {
           alert("O valor informado é inválido");
           valor = parseFloat(prompt(`Digite o valor no posto ${i}`));
