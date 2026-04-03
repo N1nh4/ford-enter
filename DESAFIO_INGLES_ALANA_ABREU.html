@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let distancia = parseFloat(
+        prompt(
+          "Qual a distância percorrida da sua casa até seu trabalho? (em km)",
+        ),
+      );
+      let consumo = parseFloat(
+        prompt("Qual o consumo médio do seu veículo (em Km/L)?"),
+      );
+
+      let consumo_necessario = distancia / consumo;
+
+      document.writeln(`O consumo necessário é ${consumo_necessario} litross`);
+      document.writeln("</br>");
+
+      let qtd_postos = parseInt(prompt("Em quantos postos você pesquisou?"));
+
+      let menor_valor = Infinity++;
+      let total_valores = 0;
+      let media = 0;
+
+      for (let i = 1; i <= qtd_postos; i++) {
+        let valor = parseFloat(prompt(`Digite o valor no posto ${i}`));
+
+        while (isNaN(valor) == 1) {
+          alert("O valor informado é inválido");
+          valor = parseFloat(prompt(`Digite o valor no posto ${i}`));
+
+        }
+
+        if (valor < menor_valor) {
+          menor_valor = valor;
+        }
+
+        total_valores += valor;
+        console.log(total_valores);
+
+        media = total_valores / qtd_postos;
+      }
+
+      let gasto_diario = 2 * (consumo_necessario * menor_valor);
+
+      document.writeln(`O menor valor pesquisado é R$ ${menor_valor}`);
+      document.writeln("</br>");
+
+      document.writeln(`A média dos valores pesquisados é de ${media}`);
+      document.writeln("</br>");
+
+      document.writeln(`O gasto diário (ida e volta) é de R$ ${gasto_diario}`);
+      document.writeln("</br>");
+    </script>
+  </body>
+</html>
