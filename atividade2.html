@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <script>
+
+        function analisarNumeros() {
+            let soma = 0;
+            let qtd_par = 0;
+            let qtd_impar = 0;
+            let menor_num = +Infinity;
+            let maior_num = -Infinity;
+            for (let i=0; i <5; i++){
+                let num = parseInt(prompt("Digite um número:"));
+                soma = soma + num;
+
+                if (num % 2 == 0){
+                    qtd_par ++;
+                } else {
+                    qtd_impar ++;
+                }
+
+                if (num > maior_num) {
+                    maior_num = num;
+                }
+
+                if (num < menor_num) {
+                    menor_num = num;
+                }
+
+            }
+
+        console.log(`soma total ${soma}`);
+        console.log(`num pares ${qtd_par}`);
+        console.log(`num impares ${qtd_impar}`);
+        console.log(`maior num ${maior_num}`);
+        console.log(`menor num ${menor_num}`);
+        }
+
+        analisarNumeros();
+    </script>
+</body>
+</html>
